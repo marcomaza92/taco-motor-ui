@@ -1,6 +1,6 @@
 export interface Action {
   name: string;
-  fn: (params: any) => Promise<void>;
+  fn: (params: number | never) => Promise<void>;
 }
 
 export interface ActionsProps {

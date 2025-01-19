@@ -6,7 +6,6 @@ import Actions from "@/components/Actions/Actions";
 
 const Brands = async () => {
   const brands = await brandsApi.getAll();
-  console.log(brands);
   const actions = [
     {
       name: "Delete",
