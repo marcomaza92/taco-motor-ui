@@ -1,11 +1,13 @@
+import { baseUrl } from "./constants";
+
 const getAll = async () => {
-  const response = await fetch("http://localhost:4000/brands/all");
+  const response = await fetch(`${baseUrl}/brands/all`);
   const data = await response.json();
   return data;
 };
 
 const addOne = async (body: Record<string, FormDataEntryValue | null>) => {
-  const response = await fetch("http://localhost:4000/brands/add", {
+  const response = await fetch(`${baseUrl}/brands/add`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -17,7 +19,7 @@ const addOne = async (body: Record<string, FormDataEntryValue | null>) => {
 };
 
 const deleteOne = async (id: number) => {
-  await fetch(`http://localhost:4000/brands/${id}`, {
+  await fetch(`${baseUrl}/brands/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",

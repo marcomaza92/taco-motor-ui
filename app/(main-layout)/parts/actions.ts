@@ -1,12 +1,13 @@
 "use server";
 
+import { baseUrl } from "@/services/api/constants";
 import { revalidatePath } from "next/cache";
 
 export const addPart = async (formData: FormData) => {
   const rawData = {
     name: formData.get("name"),
   };
-  await fetch("http://localhost:4000/parts/create", {
+  await fetch(`${baseUrl}/parts/create`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
